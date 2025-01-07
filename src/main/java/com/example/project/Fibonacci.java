@@ -13,14 +13,52 @@ public class Fibonacci {
 
       PRECONDITION: seqLen >= 2
     */
-  public Fibonacci(int seqLen) {
-    /* implement me */
+  public Fibonacci(int seqLen) 
+  {
+     // if (seqLen >= 1)
+    // {
+    //   sequence[0] = 0;
+    // }
+    // if (seqLen >= 2)
+    // {
+    //   sequence[1] = 1;
+    // }
+    // if (seqLen >= 2)
+    // {
+    //   for (int i = 2; i < seqLen; i++)
+    //   {
+    //       sequence[i] = sequence[i - 1] + sequence[i-2];
+    //   }
+    // }
+    sequence = fibonnaciArrayMaker(seqLen, sequence);
+   
+  }
+
+  public int[] fibonnaciArrayMaker(int seqLen, int[] seq)
+  { 
+    seq = new int[seqLen];
+    if (seqLen >= 1)
+    {
+      seq[0] = 0;
+    }
+    if (seqLen >= 2)
+    {
+      seq[1] = 1;
+    }
+    if (seqLen >= 2)
+    {
+      for (int i = 2; i < seqLen; i++)
+      {
+          seq[i] = seq[i - 1] + seq[i-2];
+      }
+    }
+    return seq;
   }
 
   /** Getter method: returns a reference to the sequence array
     */
   public int[] getSequence() {
-    /* implement me */
+    return sequence;
   }
 
   /** Returns the index in the array where a particular value, searchVal, is
@@ -29,7 +67,23 @@ public class Fibonacci {
       sequences longer than 2 numbers)
    */
   public int getIndexOf(int searchVal) {
-    /* implement me */
+    if (searchVal == 1)
+    {
+      return 1;
+    }
+    else
+    {
+      int i = 0;
+      for (int num : sequence)
+      {
+        if (num == searchVal)
+        {
+          return i;
+        }
+        i++;
+      }
+    }
+    return -1;
   }
 
   /** Assigns sequence to a new array that extends the current sequence by
@@ -39,8 +93,11 @@ public class Fibonacci {
       with howManyMore = 3, sequence would be assigned to a new array with
       the next 3 Fibonacci numbers added: {0, 1, 1, 2, 3, 5, 8, 13, 21}
    */
-  public void extendBy(int howManyMore) {
-    /* implement this method */
+  public void extendBy(int howManyMore) 
+  {
+      int seqLen = sequence.length + howManyMore;
+      sequence = new int[seqLen];
+      sequence = fibonnaciArrayMaker(seqLen, sequence);
   }
 
   /** Returns a string that represents the sequence array nicely formatted, for
@@ -49,6 +106,6 @@ public class Fibonacci {
    *  USE THE ARRAYPRINTER UTILITY CLASS IN YOUR SOLUTION TO THIS METHOD
    */
   public String fibonacciString() {
-    /* implement this method using the utility class */
+    return ArrayPrinter.formatIntNicely(sequence);
   }
 }
