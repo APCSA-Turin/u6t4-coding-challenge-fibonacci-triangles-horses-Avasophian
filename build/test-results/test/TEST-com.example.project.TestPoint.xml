@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.project.TestPoint" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-01-07T16:49:36" hostname="codespaces-9b0f16" time="0.026">
+<testsuite name="com.example.project.TestPoint" tests="3" skipped="0" failures="0" errors="0" timestamp="2025-01-09T17:00:06" hostname="codespaces-9b0f16" time="0.08">
   <properties/>
-  <testcase name="testPointInfo()" classname="com.example.project.TestPoint" time="0.013"/>
-  <testcase name="testDistanceTo()" classname="com.example.project.TestPoint" time="0.005"/>
-  <testcase name="testConstructor()" classname="com.example.project.TestPoint" time="0.001"/>
+  <testcase name="testPointInfo()" classname="com.example.project.TestPoint" time="0.066"/>
+  <testcase name="testDistanceTo()" classname="com.example.project.TestPoint" time="0.001"/>
+  <testcase name="testConstructor()" classname="com.example.project.TestPoint" time="0.008"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
